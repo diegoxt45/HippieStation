@@ -16,3 +16,8 @@
 	new /obj/item/wirecutters/syndicate(src)
 	new /obj/item/multitool/syndicate(src)
 	new /obj/item/clothing/gloves/combat(src)
+
+/obj/item/storage/toolbox/swing
+	name = "combo toolbox"
+	desc = "if you are seeing this ping @Zyzarda"
+	
