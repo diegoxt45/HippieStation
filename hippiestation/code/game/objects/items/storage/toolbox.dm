@@ -21,3 +21,10 @@
 	name = "combo toolbox"
 	desc = "if you are seeing this ping @Zyzarda"
 	
+/obj/item/storage/toolbox/swing/attack(mob/M as mob, mob/user)
+	if(user.a_intent != INTENT_HARM)
+		return ..()
+	return
+
+/obj/effect/toolbox_attack
+	var
