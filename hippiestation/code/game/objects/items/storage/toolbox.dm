@@ -27,4 +27,20 @@
 	return
 
 /obj/effect/toolbox_attack
-	var
+	desc = "A swinging toolbox"
+	name = "swinging toolbox"
+	icon_state = "toolbox"
+	anchored = TRUE
+	opacity = 0
+	density = TRUE
+	CanAtmosPass = ATMOS_PASS_DENSITY
+	var/timeleft = 50
+
+/obj/item/storage/toolbox/swing/afterattack(atom/target, mob/living/user, flag, params)
+	new obj/effect/toolbox_attack(get_turf(target), user)
+
+/obj/effect/toolbox_attack/Initialze()
+	. = ..()
+	if(timeleft)
+		QDEL_IN(src, timeleft)
+
