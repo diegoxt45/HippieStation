@@ -179,7 +179,17 @@
 /obj/item/melee/baton/emp_act(severity)
 	. = ..()
 	if (!(. & EMP_PROTECT_SELF))
+
+		// hippie start -- an actual emp
+		tesla_zap(src, 6 / severity, 15000 / severity, TESLA_FUSION_FLAGS)
+		visible_message("<span class='danger'>The [src] releases its energy in a single blast!</span>")
+		playsound(user, 'sound/magic/lightningbolt.ogg', 100, 1, -1)
+		deductcharge(5000 / severity)
+		// hippie end
+
+		/* hippie start -- more cell damage
 		deductcharge(1000 / severity)
+		hippie end*/
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/melee/baton/cattleprod
