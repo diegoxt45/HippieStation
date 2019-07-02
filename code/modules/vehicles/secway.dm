@@ -46,6 +46,10 @@
 	STOP_PROCESSING(SSobj,src)
 	return ..()
 
+/obj/vehicle/ridden/secway/emp_act(severity)
+	. = ..()
+	obj_integrity -= 80 / severity
+
 /obj/vehicle/ridden/secway/bullet_act(obj/item/projectile/P)
 	if(prob(60) && buckled_mobs)
 		for(var/mob/M in buckled_mobs)
