@@ -5,11 +5,13 @@
 	var/list/spells = list()
 	var/channeling = FALSE
 
+/* hippie -- how about no
 /datum/action/innate/cult/blood_magic/Grant()
 	..()
 	button.screen_loc = DEFAULT_BLOODSPELLS
 	button.moved = DEFAULT_BLOODSPELLS
 	button.ordered = FALSE
+*/
 
 /datum/action/innate/cult/blood_magic/Remove()
 	for(var/X in spells)
@@ -21,6 +23,7 @@
 		return FALSE
 	return ..()
 
+/* hippie -- how about no
 /datum/action/innate/cult/blood_magic/proc/Positioning()
 	var/list/screen_loc_split = splittext(button.screen_loc,",")
 	var/list/screen_loc_X = splittext(screen_loc_split[1],":")
@@ -31,6 +34,7 @@
 			var/order = pix_X+spells.Find(B)*31
 			B.button.screen_loc = "[screen_loc_X[1]]:[order],[screen_loc_Y[1]]:[screen_loc_Y[2]]"
 			B.button.moved = B.button.screen_loc
+*/
 
 /datum/action/innate/cult/blood_magic/Activate()
 	var/rune = FALSE
